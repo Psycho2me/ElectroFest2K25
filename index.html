@@ -4,297 +4,179 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="description" content="ElectroFest2K25 - ECE Department Symposium. A fusion of innovation and creativity.">
-  <meta name="author" content="ECE Dept">
-  <title>ElectroFest2K25 | ECE Department Symposium</title>
-
-  <!-- Link to external fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-  <!-- Favicon -->
-  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
-
-  <!-- Link to external styles -->
+  <meta name="description" content="ElectroFest2K25 - A celebration of innovation, creativity, and technology with tech and non-tech events.">
+  <meta name="keywords" content="ElectroFest, ECE Symposium, Tech Events, Paper Presentation, Project Expo">
+  <meta name="author" content="ElectroFest2K25">
+  <title>ElectroFest2K25 | ECE Dept Symposium</title>
   <link rel="stylesheet" href="assets/css/style.css">
-
-  <!-- AOS (Animate On Scroll) -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-  <!-- Lightbox for gallery -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
-
-  <!-- Theme Toggle JS -->
-  <script src="assets/js/script.js" defer></script>
 </head>
 
 <body>
 
-  <!-- ========== HEADER / NAVIGATION ========== -->
-  <header class="header" id="header">
-    <div class="logo">
-      <img src="assets/images/hero-logo.png" alt="ElectroFest2K25 Logo" />
-    </div>
-    <nav class="navbar">
-      <ul>
+  <!-- Header -->
+  <header id="header">
+    <nav>
+      <div class="logo">
+        <img src="assets/images/hero-logo.png" alt="ElectroFest2K25 Logo">
+      </div>
+      <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#events">Events</a></li>
-        <li><a href="#gallery">Gallery</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-    <div class="theme-toggle">
-      <label for="theme-toggle">Theme</label>
-      <select id="theme-toggle" onchange="changeTheme()">
-        <option value="light">Light</option>
-        <option value="dark">Dark</option>
-        <option value="blue">Blue</option>
-        <option value="green">Green</option>
-      </select>
+    <div class="hero-text">
+      <h1>Welcome to ElectroFest2K25</h1>
+      <p>Where Innovation Sparks, Circuits Talk</p>
     </div>
   </header>
 
-  <!-- ========== HERO SECTION ========== -->
-  <section class="hero" id="hero">
-    <div class="hero-content">
-      <h1>ElectroFest2K25</h1>
-      <p>"Where Innovation Sparks, Circuits Talk."</p>
-      <div class="countdown">
-        <p>Countdown to the event:</p>
-        <div id="countdown"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== ABOUT SECTION ========== -->
-  <section id="about" class="about" data-aos="fade-up">
-    <div class="section-header">
-      <h2>About ElectroFest2K25</h2>
-      <p>ElectroFest2K25 is a celebration of innovation, creativity, and technology. The Department of Electronics and Communication Engineering presents this exciting symposium with a range of tech and non-tech events designed to challenge and entertain you!</p>
-    </div>
-    <div class="about-details">
-      <p>Join us for a series of events that will test your technical skills, creative thinking, and teamwork. From project expos to quirky tongue twisters, ElectroFest2K25 promises to be an event to remember!</p>
-    </div>
-  </section>
-
-  <!-- ========== EVENTS SECTION ========== -->
-  <section id="events" class="events" data-aos="fade-up">
-    <div class="section-header">
-      <h2>Events</h2>
-      <p>Check out the exciting events we have lined up for you!</p>
-    </div>
-
-    <!-- Event Cards Grid -->
+  <!-- Events Section -->
+  <section id="events">
+    <h2>Upcoming Events</h2>
     <div class="event-cards">
-      <!-- Tech Events -->
+      <!-- Event Card 1 -->
       <div class="event-card">
-        <img src="assets/images/event-placeholder1.jpg" alt="Innovista" />
+        <img src="assets/images/event1.jpg" alt="Event 1">
         <div class="event-info">
           <h3>Innovista - Project Expo</h3>
-          <p>Showcase your innovative projects and ideas.</p>
-          <a href="assets/docs/project-pdf.pdf" download>Download PDF</a>
-          <a href="https://google.com" target="_blank">Register</a>
+          <p>Showcase your innovative projects and get a chance to win exciting prizes.</p>
+          <a href="assets/docs/innovista.pdf" class="download-btn" target="_blank">Download PDF</a>
+          <a href="https://forms.gle/xyz" class="register-btn" target="_blank">Register</a>
         </div>
       </div>
+
+      <!-- Event Card 2 -->
       <div class="event-card">
-        <img src="assets/images/event-placeholder2.jpg" alt="TechTales" />
+        <img src="assets/images/event2.jpg" alt="Event 2">
         <div class="event-info">
           <h3>TechTales - Paper Presentation</h3>
-          <p>Present your research paper to an audience of tech enthusiasts.</p>
-          <a href="assets/docs/paper-pdf.pdf" download>Download PDF</a>
-          <a href="https://google.com" target="_blank">Register</a>
+          <p>Present your research paper on various tech topics and gain recognition.</p>
+          <a href="assets/docs/techtales.pdf" class="download-btn" target="_blank">Download PDF</a>
+          <a href="https://forms.gle/xyz" class="register-btn" target="_blank">Register</a>
         </div>
       </div>
+
+      <!-- Event Card 3 -->
       <div class="event-card">
-        <img src="assets/images/event-placeholder3.jpg" alt="Quiztronic" />
+        <img src="assets/images/event3.jpg" alt="Event 3">
         <div class="event-info">
           <h3>Quiztronic - Tech Quiz</h3>
-          <p>Test your knowledge on electronics and communication technologies.</p>
-          <a href="assets/docs/quiz-pdf.pdf" download>Download PDF</a>
-          <a href="https://google.com" target="_blank">Register</a>
+          <p>Put your knowledge of technology to the test in a fun and competitive quiz.</p>
+          <a href="assets/docs/quiztronic.pdf" class="download-btn" target="_blank">Download PDF</a>
+          <a href="https://forms.gle/xyz" class="register-btn" target="_blank">Register</a>
         </div>
       </div>
+
+      <!-- Event Card 4 -->
       <div class="event-card">
-        <img src="assets/images/event-placeholder4.jpg" alt="Circuitry Chaos" />
+        <img src="assets/images/event4.jpg" alt="Event 4">
         <div class="event-info">
           <h3>Circuitry Chaos - Circuit Debugging</h3>
-          <p>Debug and solve challenging circuits in this fun event.</p>
-          <a href="assets/docs/circuit-pdf.pdf" download>Download PDF</a>
-          <a href="https://google.com" target="_blank">Register</a>
+          <p>Debug and solve the most challenging circuits in this tech-based event.</p>
+          <a href="assets/docs/circuitrychaos.pdf" class="download-btn" target="_blank">Download PDF</a>
+          <a href="https://forms.gle/xyz" class="register-btn" target="_blank">Register</a>
         </div>
       </div>
+
+      <!-- Event Card 5 -->
       <div class="event-card">
-        <img src="assets/images/event-placeholder5.jpg" alt="PixelProbe" />
+        <img src="assets/images/event5.jpg" alt="Event 5">
         <div class="event-info">
           <h3>PixelProbe - Bioscope</h3>
-          <p>Explore the world of digital imaging and visual effects.</p>
-          <a href="assets/docs/bioscope-pdf.pdf" download>Download PDF</a>
-          <a href="https://google.com" target="_blank">Register</a>
+          <p>Unveil the mystery with your sharp eye in the Bioscope event.</p>
+          <a href="assets/docs/pixelprobe.pdf" class="download-btn" target="_blank">Download PDF</a>
+          <a href="https://forms.gle/xyz" class="register-btn" target="_blank">Register</a>
         </div>
       </div>
 
-      <!-- Non-Tech Events -->
+      <!-- Event Card 6 -->
       <div class="event-card">
-        <img src="assets/images/event-placeholder6.jpg" alt="EchoEnd" />
+        <img src="assets/images/event6.jpg" alt="Event 6">
         <div class="event-info">
-          <h3>EchoEnd - Start Music</h3>
-          <p>Join us for an exciting music challenge!</p>
-          <a href="assets/docs/music-pdf.pdf" download>Download PDF</a>
-          <a href="https://google.com" target="_blank">Register</a>
+          <h3>EchoEnd - Music</h3>
+          <p>Start the music and vibe in the electrifying EchoEnd event.</p>
+          <a href="assets/docs/echoend.pdf" class="download-btn" target="_blank">Download PDF</a>
+          <a href="https://forms.gle/xyz" class="register-btn" target="_blank">Register</a>
         </div>
       </div>
+
+      <!-- Event Card 7 -->
       <div class="event-card">
-        <img src="assets/images/event-placeholder7.jpg" alt="Twist-n-Talk" />
+        <img src="assets/images/event7.jpg" alt="Event 7">
         <div class="event-info">
           <h3>Twist-n-Talk - Tongue Twisters</h3>
-          <p>Challenge your vocal cords with fun tongue twisters.</p>
-          <a href="assets/docs/twist-pdf.pdf" download>Download PDF</a>
-          <a href="https://google.com" target="_blank">Register</a>
+          <p>Twist your tongue with tricky tongue twisters in this fun event.</p>
+          <a href="assets/docs/twistntalk.pdf" class="download-btn" target="_blank">Download PDF</a>
+          <a href="https://forms.gle/xyz" class="register-btn" target="_blank">Register</a>
         </div>
       </div>
+
+      <!-- Event Card 8 -->
       <div class="event-card">
-        <img src="assets/images/event-placeholder8.jpg" alt="SnapMap" />
+        <img src="assets/images/event8.jpg" alt="Event 8">
         <div class="event-info">
           <h3>SnapMap - Frame Focus</h3>
-          <p>Capture moments and win exciting prizes in this photography event.</p>
-          <a href="assets/docs/snapmap-pdf.pdf" download>Download PDF</a>
-          <a href="https://google.com" target="_blank">Register</a>
+          <p>Snap creative frames in this event that captures the best moments.</p>
+          <a href="assets/docs/snapmap.pdf" class="download-btn" target="_blank">Download PDF</a>
+          <a href="https://forms.gle/xyz" class="register-btn" target="_blank">Register</a>
         </div>
       </div>
+
+      <!-- Event Card 9 -->
       <div class="event-card">
-        <img src="assets/images/event-placeholder9.jpg" alt="AdVibe" />
+        <img src="assets/images/event9.jpg" alt="Event 9">
         <div class="event-info">
-          <h3>AdVibe - Product Ad</h3>
-          <p>Pitch your creative product ideas in front of an audience.</p>
-          <a href="assets/docs/ad-pdf.pdf" download>Download PDF</a>
-          <a href="https://google.com" target="_blank">Register</a>
+          <h3>AdVibe - Product Advertisement</h3>
+          <p>Create an advertisement for a product in this unique event.</p>
+          <a href="assets/docs/advibe.pdf" class="download-btn" target="_blank">Download PDF</a>
+          <a href="https://forms.gle/xyz" class="register-btn" target="_blank">Register</a>
         </div>
       </div>
+
+      <!-- Event Card 10 -->
       <div class="event-card">
-        <img src="assets/images/event-placeholder10.jpg" alt="FruitSwitch" />
+        <img src="assets/images/event10.jpg" alt="Event 10">
         <div class="event-info">
           <h3>FruitSwitch - Guess It</h3>
-          <p>Guess the fruit in this interactive and fun guessing game.</p>
-          <a href="assets/docs/guessit-pdf.pdf" download>Download PDF</a>
-          <a href="https://google.com" target="_blank">Register</a>
+          <p>Guess the name of the fruit in this fun event for all.</p>
+          <a href="assets/docs/fruitswitch.pdf" class="download-btn" target="_blank">Download PDF</a>
+          <a href="https://forms.gle/xyz" class="register-btn" target="_blank">Register</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ========== GALLERY SECTION ========== -->
-  <section id="gallery" class="gallery" data-aos="fade-up">
-    <div class="section-header">
-      <h2>Gallery</h2>
-      <p>Check out some moments from previous events.</p>
-    </div>
-    <div class="gallery-grid">
-      <a href="assets/images/gallery-placeholder1.jpg" data-lightbox="gallery">
-        <img src="assets/images/gallery-placeholder1.jpg" alt="Gallery Image 1" />
-      </a>
-      <a href="assets/images/gallery-placeholder2.jpg" data-lightbox="gallery">
-        <img src="assets/images/gallery-placeholder2.jpg" alt="Gallery Image 2" />
-      </a>
-      <a href="assets/images/gallery-placeholder3.jpg" data-lightbox="gallery">
-        <img src="assets/images/gallery-placeholder3.jpg" alt="Gallery Image 3" />
-      </a>
-      <a href="assets/images/gallery-placeholder4.jpg" data-lightbox="gallery">
-        <img src="assets/images/gallery-placeholder4.jpg" alt="Gallery Image 4" />
-      </a>
-    </div>
+  <!-- About Section -->
+  <section id="about">
+    <h2>About ElectroFest2K25</h2>
+    <p>ElectroFest2K25 is a celebration of innovation, creativity, and technology. It is organized by the Department of Electronics and Communication Engineering. We have a range of tech and non-tech events designed to challenge and entertain you.</p>
   </section>
 
-  <!-- ========== CONTACT SECTION ========== -->
-  <section id="contact" class="contact" data-aos="fade-up">
-    <div class="section-header">
-      <h2>Contact Us</h2>
-      <p>Have questions or want to get in touch? Feel free to reach out!</p>
-    </div>
-    
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Have questions or want to get in touch? Feel free to reach out!</p>
+
     <!-- Google Form Embed for Contact -->
-    <div class="contact-form">
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScw8gUQeFqVx6vFY9LM5HsiLfmUk2Q57jFQwGFk2pqFqTqbRg/viewform?embedded=true" width="640" height="843" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-    </div>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScw8gUQeFqVx6vFY9LM5HsiLfmUk2Q57jFQwGFk2pqFqTqbRg/viewform?embedded=true" width="640" height="843" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 
     <!-- Google Map Embed for Location -->
-    <div class="location">
-      <h4>Find Us Here:</h4>
-      <iframe src="https://forms.gle/nMF76sMTb3vaLKBM6" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    </div>
+    <h4>Find Us Here:</h4>
+    <iframe src="https://www.google.com/maps/embed?pb=YOUR-LOCATION-URL-HERE" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
   </section>
 
-  <!-- ========== FOOTER ========== -->
-  <footer class="footer">
-    <div class="footer-content">
-      <div class="social-media">
-        <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
-        <a href="https://www.instagram.com" target="_blank">Instagram</a>
-        <a href="https://www.youtube.com" target="_blank">YouTube</a>
-      </div>
-      <p>&copy; 2025 ElectroFest2K25. All rights reserved. | Powered by ECE Dept.</p>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 ElectroFest2K25. All rights reserved. | Powered by ECE Dept.</p>
+    <div class="social-media">
+      <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+      <a href="https://www.instagram.com" target="_blank">Instagram</a>
+      <a href="https://www.youtube.com" target="_blank">YouTube</a>
     </div>
   </footer>
 
-  <!-- Back to Top Button -->
-  <button class="back-to-top" id="backToTopBtn" onclick="scrollToTop()">↑</button>
-
-  <!-- AOS.js (for animation effects) -->
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
-  
-  <!-- Lightbox JS (for gallery images) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
-  
-  <script>
-    // Initialize AOS.js for animations
-    AOS.init({
-      duration: 1000,
-      once: true
-    });
-
-    // Countdown Timer Logic
-    const countdownDate = new Date("April 26, 2025 21:00:00").getTime();
-
-    const countdown = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = countdownDate - now;
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      document.getElementById("countdown").innerHTML = `
-        ${days}d ${hours}h ${minutes}m ${seconds}s
-      `;
-
-      if (distance < 0) {
-        clearInterval(countdown);
-        document.getElementById("countdown").innerHTML = "Event Started!";
-      }
-    }, 1000);
-
-    // Theme Change Logic
-    function changeTheme() {
-      const theme = document.getElementById("theme-toggle").value;
-      document.body.classList.remove('light', 'dark', 'blue', 'green');
-      document.body.classList.add(theme);
-    }
-
-    // Scroll to Top Logic
-    window.onscroll = function () {
-      const backToTopBtn = document.getElementById("backToTopBtn");
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        backToTopBtn.style.display = "block";
-      } else {
-        backToTopBtn.style.display = "none";
-      }
-    };
-
-    function scrollToTop() {
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-    }
-  </script>
+  <script src="assets/js/script.js"></script>
 </body>
 
 </html>

@@ -1,92 +1,91 @@
-// ==========================
 // Theme Toggle Functionality
-// ==========================
-const themeToggleButton = document.getElementById('themeToggle');
+const themeToggleBtn = document.getElementById("theme-toggle");
 const body = document.body;
-const availableThemes = ['light', 'dark', 'blue', 'green', 'purple'];  // Available theme options
+const currentTheme = localStorage.getItem("theme");
 
-// Check if there's a saved theme in localStorage and apply it
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme && availableThemes.includes(savedTheme)) {
-  body.classList.add(savedTheme + '-theme');
-  themeToggleButton.textContent = savedTheme === 'dark' ? '🌕' : '🌙'; // Dark mode toggle icon
-} else {
-  body.classList.add('light-theme');
+if (currentTheme) {
+  body.classList.add(currentTheme);
 }
 
-// Toggle theme on button click
-themeToggleButton.addEventListener('click', () => {
-  let currentTheme = 'light'; // default theme
-
-  // Find the current active theme
-  for (let theme of availableThemes) {
-    if (body.classList.contains(theme + '-theme')) {
-      currentTheme = theme;
-      break;
-    }
-  }
-
-  // Change to next theme in the list
-  let nextThemeIndex = (availableThemes.indexOf(currentTheme) + 1) % availableThemes.length;
-  let nextTheme = availableThemes[nextThemeIndex];
-
-  // Apply new theme
-  body.classList.remove(currentTheme + '-theme');
-  body.classList.add(nextTheme + '-theme');
-
-  // Save to localStorage
-  localStorage.setItem('theme', nextTheme);
-
-  // Update button icon based on theme
-  themeToggleButton.textContent = nextTheme === 'dark' ? '🌕' : '🌙';
+themeToggleBtn.addEventListener("click", () => {
+  body.classList.toggle("dark-theme");
+  const theme = body.classList.contains("dark-theme") ? "dark-theme" : "light-theme";
+  localStorage.setItem("theme", theme); // Save theme in localStorage
 });
 
-// ==========================
-// Back to Top Button
-// ==========================
-const backToTopBtn = document.getElementById('backToTopBtn');
+// Event Filter (Tabs)
+const eventTabs = document.querySelectorAll(".event-tab");
+const eventCards = document.querySelectorAll(".event-card");
 
-// Show the button when scrolled 200px down
-window.onscroll = function () {
-  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-    backToTopBtn.style.display = "block";
-  } else {
-    backToTopBtn.style.display = "none";
-  }
-};
-
-// Scroll to the top of the page when the button is clicked
-backToTopBtn.addEventListener('click', function () {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
+eventTabs.forEach(tab => {
+  tab.addEventListener("click", () => {
+    const category = tab.dataset.category;
+    eventCards.forEach(card => {
+      if (category === "all" || card.classList.contains(category)) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    });
+    eventTabs.forEach(tab => tab.classList.remove("active"));
+    tab.classList.add("active");
   });
 });
 
-// ==========================
-// Music Toggle (Autoplay, Mute on load)
-// ==========================
-const musicPlayer = new Audio('assets/music/DigitalVoyage.mp3');
-musicPlayer.loop = true; // Keep the music playing in loop
+// Countdown Timer
+const countdownDate = new Date("April 26, 2025 21:00:00").getTime();
+const countdownElement = document.getElementById("countdown");
 
-// Set music to autoplay muted on page load
-musicPlayer.volume = 0.1; // Set initial low volume (you can adjust)
-musicPlayer.autoplay = true;
-musicPlayer.muted = true;
+function updateCountdown() {
+  const now = new Date().getTime();
+  const timeLeft = countdownDate - now;
 
-// Music toggle button functionality
-const musicToggleButton = document.getElementById('musicToggle');
-
-// Set the initial state of the music toggle
-musicToggleButton.textContent = "🔊"; // Mute state
-
-// Handle music toggle button click
-musicToggleButton.addEventListener('click', () => {
-  if (musicPlayer.muted) {
-    musicPlayer.muted = false;
-    musicToggleButton.textContent = "🔉"; // Sound on
+  if (timeLeft <= 0) {
+    countdownElement.innerHTML = "Event has started!";
+    clearInterval(countdownInterval);
   } else {
-    musicPlayer.muted = true;
-    musicToggleButton.textContent = "🔊"; // Sound off
+    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+    countdownElement.innerHTML = `${hours}h ${minutes}m ${seconds}s`;
   }
+}
+
+const countdownInterval = setInterval(updateCountdown, 1000);
+
+// Back to Top Button
+const backToTopBtn = document.getElementById("back-to-top");
+
+backToTopBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+// Page Load Animation
+document.addEventListener("DOMContentLoaded", () => {
+  setTimeout(() => {
+    document.getElementById("loading-overlay").style.display = "none"; // Remove loading screen
+  }, 1500); // Adjust this time as per the load time
+});
+
+// Adjust the visibility of event categories based on selection
+const eventTabsElements = document.querySelectorAll('.event-tab');
+
+eventTabsElements.forEach((tab) => {
+  tab.addEventListener('click', function () {
+    const category = tab.dataset.category;
+    eventCards.forEach((card) => {
+      if (category === 'all' || card.classList.contains(category)) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
+
+// Theme Switcher Button Event Listener
+document.getElementById("theme-toggle").addEventListener("click", () => {
+  document.body.classList.toggle("dark-theme");
+  const newTheme = document.body.classList.contains("dark-theme") ? "dark-theme" : "light-theme";
+  localStorage.setItem("theme", newTheme);
 });
