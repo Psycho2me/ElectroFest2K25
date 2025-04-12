@@ -58,8 +58,21 @@ nav {
   margin: auto;
 }
 
+.welcome-text h1 {
+  font-size: 1.8rem;
+  color: white;
+}
+
+.logo-text-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .logo img {
-  height: 50px;
+  
+  height: 90px;
+  max-width: 100%;
 }
 
 .nav-links {
@@ -69,7 +82,7 @@ nav {
 }
 
 .nav-links li a {
-  text-decoration: wavyave;
+  text-decoration: none;
   color: white;
   font-weight: 500;
   transition: color 0.3s ease;
