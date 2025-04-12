@@ -10,10 +10,15 @@ html {
 }
 
 body {
+  transition: background-color 0.5s ease;
   font-family: 'Poppins', sans-serif;
   background-color: #3e94e5bf;
   color: #333;
   line-height: 1.6;
+}
+
+body:hover {
+  background-color: #e0f7fa; /* Light cyan background */
 }
 
 /* Loading Overlay */
@@ -380,4 +385,13 @@ body.scrolled #back-to-top {
   .event-card img {
     height: 160px;
   }
+}
+/* Parallax effect on background */
+.parallax {
+  background-image: url('your-image-path.jpg');
+  height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
