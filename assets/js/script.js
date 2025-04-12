@@ -1,18 +1,21 @@
-// ElectroFest2K25 JavaScript
-
 document.addEventListener("DOMContentLoaded", () => {
   // Theme Toggle
   const themeToggleBtn = document.getElementById("theme-toggle");
   const body = document.body;
   const savedTheme = localStorage.getItem("theme");
 
+  // Apply saved theme
   if (savedTheme) {
     body.classList.add(savedTheme);
   }
 
+  // Theme toggle button event
   if (themeToggleBtn) {
     themeToggleBtn.addEventListener("click", () => {
+      // Toggle the theme
       body.classList.toggle("dark-theme");
+
+      // Save the new theme to localStorage
       const newTheme = body.classList.contains("dark-theme") ? "dark-theme" : "light-theme";
       localStorage.setItem("theme", newTheme);
     });
@@ -59,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const countdownInterval = setInterval(updateCountdown, 1000);
 
-  // Back to Top
+  // Back to Top Button
   const backToTopBtn = document.getElementById("back-to-top");
   if (backToTopBtn) {
     backToTopBtn.addEventListener("click", () => {
