@@ -43,10 +43,10 @@ document.addEventListener('DOMContentLoaded', function () {
       const sec = Math.floor((distance % (1000 * 60)) / 1000);
 
       timerElement.innerHTML = `
-        <span>${days}</span> D
-        <span>${hrs}</span> H 
-        <span>${mins}</span> M 
-        <span>${sec}</span> S
+        <span>${days}</span> d
+        <span>${hrs}</span> h
+        <span>${mins}</span> m 
+        <span>${sec}</span> s
       `;
     }, 1000);
   }
@@ -73,5 +73,4 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   });
-
 });
