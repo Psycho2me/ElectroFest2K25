@@ -25,19 +25,21 @@ body.dark-theme {
 
 /* Theme Toggle Button */
 .theme-toggle-btn {
+  background-var(--primary-color);
   position: fixed;
   top: 20px;
   right: 20px;
   background: #007bff;
   color: #fff;
   border: none;
-  padding: 0.6em 1.2em;
+  padding: 8px 14px;
   border-radius: 5px;
   cursor: pointer;
   z-index: 1000;
   transition: background 0.3s ease;
 }
 .theme-toggle-btn:hover {
+  background-var(--accent-color);
   background: #0056b3;
 }
 
@@ -46,13 +48,31 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #343a40;
-  color: white;
-  padding: 1em 2em;
+  padding: 15px 20px;
+  background: var(--card-bg);
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
 header img {
   width: 50px;
+}
+
+header .logo img {
+  height: 50px;
+}
+
+header nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
 }
 
 nav ul {
