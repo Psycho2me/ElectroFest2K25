@@ -44,9 +44,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
       timerElement.innerHTML = `
         <span>${days}</span> Days 
-        <span>${hours}</span> Hours 
-        <span>${minutes}</span> Minutes 
-        <span>${seconds}</span> Seconds
+        <span>${hrs}</span> Hours 
+        <span>${mins}</span> Minutes 
+        <span>${sec}</span> Seconds
       `;
     }, 1000);
   }
