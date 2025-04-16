@@ -38,15 +38,15 @@ document.addEventListener('DOMContentLoaded', function () {
       }
 
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      const hrs = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const sec = Math.floor((distance % (1000 * 60)) / 1000);
 
       timerElement.innerHTML = `
-        <span>${days}</span> Days 
-        <span>${hrs}</span> Hours 
-        <span>${mins}</span> Minutes 
-        <span>${sec}</span> Seconds
+        <span>${days}</span> D
+        <span>${hrs}</span> H 
+        <span>${mins}</span> M 
+        <span>${sec}</span> S
       `;
     }, 1000);
   }
