@@ -1,56 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta property="og:title" content="ElectroFest2K25 — ECE Symposium">
   <meta property="og:description" content="Join us for tech & non-tech events. Registrations open!">
   <meta property="og:image" content="assets/images/2k25.png">
   <meta property="og:image:alt" content="ElectroFest2K25 Logo">
   <meta property="og:url" content="https://yoursite.com">
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ElectroFest2K25</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <!-- Header Section -->
-  <header>
-    <div class="header-container">
-  <!-- Header -->
-  <header id="header">
 
-    <nav>
+  <!-- Header Section -->
+  <header id="header">
+    <div class="header-container">
       <div class="logo">
-        <img src="assets/images/hero-logo.png" alt="ElectroFest2K25 Logo" />
+        <img src="assets/images/hero-logo.png" alt="ElectroFest2K25 Logo">
       </div>
-  
-      <nav>
-        <ul>
-          <li><a href="#events">Register Now</a></li>
+      <nav class="main-nav">
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#events">Events</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-  
-      <!-- Theme Toggle Button -->
-      <button class="theme-toggle-btn">T</button>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#events">Events</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-    <div id="timer" style="font-size: 24px; font-weight: bold;"></div>
+      <button class="theme-toggle-btn" aria-label="Toggle Theme">T</button>
+    </div>
     <div class="hero-text">
       <h1>Welcome to ElectroFest'2K25</h1>
       <p>Where Innovation Sparks, Circuits Talk</p>
     </div>
-  </header>
-  
-  <!-- Home Hero Section -->
-  <section id="home" class="hero-text">
-    <h1>Welcome to ElectroFest2K25</h1>
-    <p>The biggest symposium by the ECE Department, featuring tech and non-tech events!</p>
-    
-    <!-- Countdown Timer -->
     <div class="countdown">
       <h2>Event starts in:</h2>
       <div id="timer">
@@ -60,24 +41,24 @@
         <span id="sec">00</span>s
       </div>
     </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <h1>Welcome to ElectroFest2K25</h1>
+    <p>The biggest symposium by the ECE Department, featuring tech and non-tech events!</p>
   </section>
 
   <!-- General Instructions -->
   <section id="general-instructions">
-    <p>We are excited to welcome you to ElectroFest2K25! Get ready to have fun, enjoy the events, and connect with fellow participants. Don’t 
-      forget to capture your best moments and share them on social media using #ElectroFest2K25! Stay updated by checking 
-      our website or social platforms for any last-minute changes. Your participation and enthusiasm mean a lot to us, and we truly appreciate 
-      your support. Let’s work together to make this event a grand success! We’re here to help you with any questions, and we look forward 
-      to providing you with a memorable and enjoyable experience. Good luck, have a great time, and thank you for being part of ElectroFest2K25!
-    <br>
-      Feedback forms will be distributed post-event.</p>
     <h2>General Instructions for All Events</h2>
+    <p>We are excited to welcome you to ElectroFest2K25! Get ready to have fun, enjoy the events, and connect with fellow participants. Don’t forget to share your moments on social media using #ElectroFest2K25! Stay tuned for updates and announcements.</p>
     <ul>
       <li>Register through the provided registration links.</li>
       <li>Arrive 30 minutes before your event starts.</li>
       <li>Bring your ID and any required materials.</li>
       <li>Participants may register for up to 2 events.</li>
-      <li>For queries, contact event coordinators listed below.</li>
+      <li>Contact event coordinators for queries.</li>
       <li>Event-specific rules are mentioned in each event card.</li>
       <li>Food and water will be provided at the venue.</li>
       <li>Follow the event schedule strictly.</li>
@@ -88,27 +69,11 @@
       <li>Certificates will be provided to all participants.</li>
       <li>Prizes will be awarded to the top performers.</li>
       <li>Follow us on social media for updates and announcements.</li>
-      </ul>
+    </ul>
   </section>
 
   <!-- Events Section -->
   <section id="events">
-      <div class="event-card tech">
-        <img src="assets/images/2K25.jpg" alt="Event 1">
-        <div class="event-info">
-          <h2>Instruction</h2>
-          <p>● ID card is necessary for all the participants.</p>
-          <p>● Participants can register as individuals or as team (Max 4 per team).</p>
-          <p>● Participants can register for multiple events.</p>
-          <p>● On-spot registration available.</p>
-          <p>● Registration fee per head is 100.</p>
-          <p>● Participation certificates will be given as E-certificate.</p>
-          <p>● Usage of mobile/internet in events without any prior permission is strictly prohibited.</p>
-          <p>● The judge decision is final and cannot be contested.</p>
-          <p>● Top three prizes will be awarded with hardcopy certificates and medals</p>
-          <a href="assets/pdfs/techvista.pdf" class="download-btn" target="_blank">Instruction</a>
-        </div>
-      </div>
     <h2>Upcoming Events</h2>
     <div class="event-tabs">
       <button class="event-tab active" data-category="all">All</button>
@@ -117,9 +82,10 @@
     </div>
 
     <div class="event-cards">
-      <!-- Techvista -->
+
+      <!-- Event Template Example -->
       <div class="event-card tech">
-        <img src="assets/images/event-techvista.jpg" alt="Techvista - Project Expo" />
+        <img src="assets/images/event-techvista.jpg" alt="Techvista - Project Expo">
         <div class="event-info">
           <h3>Techvista - Project Expo</h3>
           <p>Showcase your project and compete for prizes.</p>
@@ -137,9 +103,11 @@
         </div>
       </div>
 
+      <!-- More event cards follow the same structure -->
+
       <!-- ElectroQuiz -->
       <div class="event-card tech">
-        <img src="assets/images/event-electroquiz.jpg" alt="ElectroQuiz - Tech Quiz" />
+        <img src="assets/images/event-electroquiz.jpg" alt="ElectroQuiz - Tech Quiz">
         <div class="event-info">
           <h3>ElectroQuiz - Tech Quiz</h3>
           <p>A quiz on electronics, coding, and general tech knowledge.</p>
@@ -159,7 +127,7 @@
 
       <!-- RoboWars -->
       <div class="event-card non-tech">
-        <img src="assets/images/event-robowars.jpg" alt="RoboWars - Robotics Challenge" />
+        <img src="assets/images/event-robowars.jpg" alt="RoboWars - Robotics Challenge">
         <div class="event-info">
           <h3>RoboWars - Robotics Challenge</h3>
           <p>Battle your robots and win glory!</p>
@@ -177,161 +145,88 @@
         </div>
       </div>
 
-      <!-- Paper Presentation -->
-      <div class="event-card tech">
-        <img src="assets/images/event-paper-presentation.jpg" alt="Paper Presentation" />
-        <div class="event-info">
-          <h3>Paper Presentation</h3>
-          <p>Present your research on cutting-edge tech topics.</p>
-          <a href="assets/pdfs/paper-presentation.pdf" class="download-btn" target="_blank">Download PDF</a>
-          <a href="https://forms.gle/VmyktoovC5XMFE7y8" class="register-btn" target="_blank">Register</a>
-          <p class="event-location">Location: Conference Room</p>
-          <div class="event-instructions">
-            <h4>Event Instructions:</h4>
-            <ul>
-              <li>15 minutes maximum per presentation.</li>
-              <li>Bring a USB drive with your files.</li>
-              <li>Own laptop recommended for presentation.</li>
-            </ul>
+      <section id="more-events" class="events-section">
+        <h2>Explore More Events</h2>
+        <div class="events-grid">
+      
+          <div class="event-card">
+            <h3>Paper Presentation</h3>
+            <p>Showcase your innovative ideas through a technical paper and present to a panel of experts.</p>
+            <a href="paper-presentation-instructions.pdf" download class="btn">Download Instructions</a>
+            <a href="register-paper-presentation.html" class="btn primary">Register Now</a>
           </div>
+      
+          <div class="event-card">
+            <h3>Byte Battle</h3>
+            <p>Compete in the ultimate coding challenge and battle it out with your peers.</p>
+            <a href="byte-battle-instructions.pdf" download class="btn">Download Instructions</a>
+            <a href="register-byte-battle.html" class="btn primary">Register Now</a>
+          </div>
+      
+          <div class="event-card">
+            <h3>Wired Minds</h3>
+            <p>Test your circuit design and problem-solving skills in this electrifying event.</p>
+            <a href="wired-minds-instructions.pdf" download class="btn">Download Instructions</a>
+            <a href="register-wired-minds.html" class="btn primary">Register Now</a>
+          </div>
+      
+          <div class="event-card">
+            <h3>Bioscope</h3>
+            <p>Show off your creativity through short films and visual storytelling.</p>
+            <a href="bioscope-instructions.pdf" download class="btn">Download Instructions</a>
+            <a href="register-bioscope.html" class="btn primary">Register Now</a>
+          </div>
+      
+          <div class="event-card">
+            <h3>Chat Music</h3>
+            <p>Decode lyrics and guess the tunes in this fun-filled musical puzzle event.</p>
+            <a href="chat-music-instructions.pdf" download class="btn">Download Instructions</a>
+            <a href="register-chat-music.html" class="btn primary">Register Now</a>
+          </div>
+      
+          <div class="event-card">
+            <h3>Twist-n-Talk</h3>
+            <p>Speak on topics with unexpected twists, test your wit and articulation!</p>
+            <a href="twist-n-talk-instructions.pdf" download class="btn">Download Instructions</a>
+            <a href="register-twist-n-talk.html" class="btn primary">Register Now</a>
+          </div>
+      
+          <div class="event-card">
+            <h3>Frame Focus</h3>
+            <p>Capture the perfect shot under unique themes and show off your photography skills.</p>
+            <a href="frame-focus-instructions.pdf" download class="btn">Download Instructions</a>
+            <a href="register-frame-focus.html" class="btn primary">Register Now</a>
+          </div>
+      
+          <div class="event-card">
+            <h3>Mind Maze</h3>
+            <p>Put your logic, memory, and reasoning to the test in this brain-teasing challenge.</p>
+            <a href="mind-maze-instructions.pdf" download class="btn">Download Instructions</a>
+            <a href="register-mind-maze.html" class="btn primary">Register Now</a>
+          </div>
+      
+          <div class="event-card">
+            <h3>Act It Out</h3>
+            <p>Express without words! Act your way through prompts and let your team guess.</p>
+            <a href="act-it-out-instructions.pdf" download class="btn">Download Instructions</a>
+            <a href="register-act-it-out.html" class="btn primary">Register Now</a>
+          </div>
+      
         </div>
-      </div>
-      <!-- Event Card 3 -->
-      <div class="event-card tech">
-        <img src="assets/images/event-electroquiz.jpg" alt="Event 3">
-        <div class="event-info">
-          <h3>Byte Battle - Tech Quiz</h3>
-          <p>Put your knowledge of technology to the test in a fun and competitive quiz.</p>
-          <a href="assets/pdfs/bytebattle.pdf" class="download-btn" target="_blank">Download PDF</a>
-          <a href="https://forms.gle/xyz" class="register-btn" target="_blank">Register</a>
-          <p class="event-location">Location: Room 103</p>
-        </div>
-      </div>
-
-      <!-- Event Card 4 -->
-      <div class="event-card tech">
-        <img src="assets/images/event-wiredminds.jpg" alt="Event 4">
-        <div class="event-info">
-          <h3>Wired Minds - Circuit Debugging</h3>
-          <p>Debug and solve the most challenging circuits in this tech-based event.</p>
-          <a href="assets/pdfs/wiredminds.pdf" class="download-btn" target="_blank">Download PDF</a>
-          <a href="https://forms.gle/xyz" class="register-btn" target="_blank">Register</a>
-          <p class="event-location">Location: Room 104</p>
-        </div>
-      </div>
-
-      <!-- Event Card 5 -->
-      <div class="event-card tech">
-        <img src="assets/images/event-bioscope.jpg" alt="Event 5">
-        <div class="event-info">
-          <h3>Bioscope</h3>
-          <p>Unveil the mystery with your sharp eye in the Bioscope event.</p>
-          <a href="assets/pdfs/bioscope.pdf" class="download-btn" target="_blank">Download PDF</a>
-          <a href="https://forms.gle/xyz" class="register-btn" target="_blank">Register</a>
-          <p class="event-location">Location: Room 105</p>
-        </div>
-      </div>
-
-      <!-- NON - TECH -->
-      <!-- Event Card 6 -->
-      <div class="event-card non-tech">
-        <img src="assets/images/event-chatmusic.jpg" alt="Event 6">
-        <div class="event-info">
-          <h3>Chat Music</h3>
-          <p>Start the music and vibe in the electrifying EchoEnd event.</p>
-          <a href="assets/pdfs/chatmusic.pdf" class="download-btn" target="_blank">Download PDF</a>
-          <a href="https://forms.gle/xyz" class="register-btn" target="_blank">Register</a>
-          <p class="event-location">Location: Room 201</p>
-        </div>
-      </div>
-
-      <!-- Event Card 7 -->
-      <div class="event-card non-tech">
-        <img src="assets/images/event-twistntalk.jpg" alt="Event 7">
-        <div class="event-info">
-          <h3>Twist-n-Talk - Tongue Twisters</h3>
-          <p>Twist your tongue with tricky tongue twisters in this fun event.</p>
-          <a href="assets/pdfs/twistntalk.pdf" class="download-btn" target="_blank">Download PDF</a>
-          <a href="https://forms.gle/xyz" class="register-btn" target="_blank">Register</a>
-          <p class="event-location">Location: Room 202</p>
-        </div>
-      </div>
-
-      <!-- Event Card 8 -->
-      <div class="event-card non-tech">
-        <img src="assets/images/event-framefocus.jpg" alt="Event 8">
-        <div class="event-info">
-          <h3>Frame Focus - Snap Map</h3>
-          <p>Snap creative frames in this event that captures the best moments.</p>
-          <a href="assets/pdfs/framefocus.pdf" class="download-btn" target="_blank">Download PDF</a>
-          <a href="https://forms.gle/xyz" class="register-btn" target="_blank">Register</a>
-          <p class="event-location">Location: Room 203</p>
-        </div>
-      </div>
-
-      <!-- Event Card 9 -->
-      <div class="event-card non-tech">
-        <img src="assets/images/event-mindmaze.jpg" alt="Event 9">
-        <div class="event-info">
-          <h3>Mind Maze - Product Advertisement</h3>
-          <p>Create an advertisement for a product in this unique event.</p>
-          <a href="assets/pdfs/mindmaze.pdf" class="download-btn" target="_blank">Download PDF</a>
-          <a href="https://forms.gle/xyz" class="register-btn" target="_blank">Register</a>
-          <p class="event-location">Location: Room 204</p>
-        </div>
-      </div>
-
-      <!-- Event Card 10 -->
-      <div class="event-card non-tech">
-        <img src="assets/images/event-actitout.jpg" alt="Event 10">
-        <div class="event-info">
-          <h3>Act It Out - Guess It</h3>
-          <p>Guess the name of a person in different group, a fun event for all.</p>
-          <a href="assets/pdfs/actitout.pdf" class="download-btn" target="_blank">Download PDF</a>
-          <a href="https://forms.gle/xyz" class="register-btn" target="_blank">Register</a>
-          <p class="event-location">Location: Room 205</p>
-        </div>
-      </div>
->>>>>>> b81238cc2f94d003e6fc3f27564a131f4515cc2e
+      </section>
+      
     </div>
   </section>
-
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>For queries, reach out to the event in-charges:</p>
-    <ul class="contact-list">
-      <li>Name1 — 9876543210</li>
-      <li>Name2 — 9876543211</li>
-      <li>Name3 — 9876543212</li>
-      <li>Name4 — 9876543213</li>
-    </ul>
-
-    <h4>Find Us:</h4>
-    <div class="map-container">
-      <iframe src="https://maps.google.com/maps?q=12.92557650154253,79.68070793087065&z=15&output=embed"
-        frameborder="0" allowfullscreen loading="lazy"></iframe>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about">
-    <h2>About ElectroFest2K25</h2>
-    <p>ElectroFest2K25 is organized by the Department of Electronics and Communication Engineering. Join us for a vibrant mix of tech and non-tech events designed to inspire innovation and fun!</p>
-  </section>
-
-  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 ElectroFest2K25. All rights reserved. | Powered by ECE Dept.</p>
+    <p>&copy; 2025 ElectroFest2K25 | All Rights Reserved</p>
     <div class="social-media">
-      <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
-      <a href="https://www.instagram.com" target="_blank">Instagram</a>
-      <a href="https://www.youtube.com" target="_blank">YouTube</a>
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+        <a href="#">Instagram</a>
     </div>
-  </footer>
-
-  <!-- JavaScript File -->
-  <script src="assets/js/script.js" defer></script>
+</footer>
+      <!-- JavaScript -->
+      <script src="assets/js/script.js"></script>
 
 </body>
 </html>

@@ -1,76 +1,45 @@
-document.addEventListener('DOMContentLoaded', function () {
+// Theme Toggle Button
+const themeToggleBtn = document.querySelector('.theme-toggle-btn');
+const body = document.body;
 
-  // =========================
-  // Theme Toggle Logic
-  // =========================
-  const themeToggleBtn = document.querySelector('.theme-toggle-btn');
+// Check local storage for the user's theme preference
+const currentTheme = localStorage.getItem('theme');
+if (currentTheme) {
+    body.classList.add(currentTheme);
+}
 
-  // Apply saved theme on load
-  if (localStorage.getItem('theme') === 'dark') {
-    document.body.classList.add('dark-theme');
-  }
-
-  // Toggle and save theme
-  themeToggleBtn.addEventListener('click', function () {
-    document.body.classList.toggle('dark-theme');
-    if (document.body.classList.contains('dark-theme')) {
-      localStorage.setItem('theme', 'dark');
+// Toggle Theme
+themeToggleBtn.addEventListener('click', () => {
+    body.classList.toggle('dark-theme');
+    
+    // Save the theme preference in localStorage
+    if (body.classList.contains('dark-theme')) {
+        localStorage.setItem('theme', 'dark-theme');
     } else {
-      localStorage.setItem('theme', 'light');
+        localStorage.removeItem('theme');
     }
-  });
-
-  // =========================
-  // Countdown Timer Logic
-  // =========================
-  const targetDate = new Date("2025-05-01T09:00:00").getTime();  // <-- set your event start date/time here!
-  const timerElement = document.getElementById('timer');
-
-  if (timerElement) {
-    const interval = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = targetDate - now;
-
-      if (distance < 0) {
-        clearInterval(interval);
-        timerElement.innerHTML = "🎉 The Event Has Started!";
-        return;
-      }
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hrs = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const sec = Math.floor((distance % (1000 * 60)) / 1000);
-
-      timerElement.innerHTML = `
-        <span>${days}</span> d
-        <span>${hrs}</span> h
-        <span>${mins}</span> m 
-        <span>${sec}</span> s
-      S;
-    }, 1000);
-  }
-
-  // =========================
-  // Event Category Filter Logic
-  // =========================
-  const tabs = document.querySelectorAll('.event-tab');
-  const cards = document.querySelectorAll('.event-card');
-
-  tabs.forEach(tab => {
-    tab.addEventListener('click', function () {
-      tabs.forEach(t => t.classList.remove('active'));
-      this.classList.add('active');
-
-      const category = this.getAttribute('data-category');
-
-      cards.forEach(card => {
-        if (category === 'all') {
-          card.style.display = 'block';
-        } else {
-          card.style.display = card.classList.contains(category) ? 'block' : 'none';
-        }
-      });
-    });
-  });
 });
+
+// Countdown Timer Functionality
+const timerElement = document.getElementById('timer');
+const eventDate = new Date('2025-05-01T09:00:00'); // Set your event date here
+
+function updateCountdown() {
+    const now = new Date();
+    const timeDifference = eventDate - now;
+
+    if (timeDifference <= 0) {
+        timerElement.innerHTML = "Event has started!";
+        return;
+    }
+
+    const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+    timerElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+}
+
+// Update countdown every second
+setInterval(updateCountdown, 1000);
