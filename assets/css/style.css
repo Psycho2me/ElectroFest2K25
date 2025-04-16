@@ -13,8 +13,8 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f8f9fa;
   color: #212529;
-  line-height: 1.6;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  line-height: 1.6;  
+  transition: background-color 0.3s, color 0.3s;
 }
 
 /* Dark Mode Styles */
@@ -137,13 +137,15 @@ nav ul li a:hover {
 
 /* Mobile Responsive Fix */
 @media (max-width: 600px) {
-  #timer {
-    font-size: 1.2rem;
+  .event-card img {
+    height: auto;
+    width: 100%;
   }
-  .countdown {
-    padding: 8px;
+  h1 {
+    font-size: 1.8rem;
   }
 }
+
 
 /* General Instructions */
 #general-instructions {
