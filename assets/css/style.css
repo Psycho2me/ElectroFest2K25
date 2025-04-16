@@ -248,12 +248,17 @@ nav ul li a:hover {
 }
 
 .event-info p {
+<<<<<<< HEAD
   margin: 0.3em 0;
 }
 
 .event-location {
   font-weight: bold;
   margin-top: 0.5em;
+=======
+  margin: 0.5rem 0;
+  color: #24075a;
+>>>>>>> b81238cc2f94d003e6fc3f27564a131f4515cc2e
 }
 
 .download-btn, .register-btn {

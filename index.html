@@ -12,11 +12,13 @@
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-
-
   <!-- Header Section -->
   <header>
     <div class="header-container">
+  <!-- Header -->
+  <header id="header">
+
+    <nav>
       <div class="logo">
         <img src="assets/images/hero-logo.png" alt="ElectroFest2K25 Logo" />
       </div>
@@ -30,6 +32,16 @@
   
       <!-- Theme Toggle Button -->
       <button class="theme-toggle-btn">T</button>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div id="timer" style="font-size: 24px; font-weight: bold;"></div>
+    <div class="hero-text">
+      <h1>Welcome to ElectroFest'2K25</h1>
+      <p>Where Innovation Sparks, Circuits Talk</p>
     </div>
   </header>
   
@@ -81,6 +93,22 @@
 
   <!-- Events Section -->
   <section id="events">
+      <div class="event-card tech">
+        <img src="assets/images/2K25.jpg" alt="Event 1">
+        <div class="event-info">
+          <h2>Instruction</h2>
+          <p>● ID card is necessary for all the participants.</p>
+          <p>● Participants can register as individuals or as team (Max 4 per team).</p>
+          <p>● Participants can register for multiple events.</p>
+          <p>● On-spot registration available.</p>
+          <p>● Registration fee per head is 100.</p>
+          <p>● Participation certificates will be given as E-certificate.</p>
+          <p>● Usage of mobile/internet in events without any prior permission is strictly prohibited.</p>
+          <p>● The judge decision is final and cannot be contested.</p>
+          <p>● Top three prizes will be awarded with hardcopy certificates and medals</p>
+          <a href="assets/pdfs/techvista.pdf" class="download-btn" target="_blank">Instruction</a>
+        </div>
+      </div>
     <h2>Upcoming Events</h2>
     <div class="event-tabs">
       <button class="event-tab active" data-category="all">All</button>
@@ -168,7 +196,103 @@
           </div>
         </div>
       </div>
+      <!-- Event Card 3 -->
+      <div class="event-card tech">
+        <img src="assets/images/event-electroquiz.jpg" alt="Event 3">
+        <div class="event-info">
+          <h3>Byte Battle - Tech Quiz</h3>
+          <p>Put your knowledge of technology to the test in a fun and competitive quiz.</p>
+          <a href="assets/pdfs/bytebattle.pdf" class="download-btn" target="_blank">Download PDF</a>
+          <a href="https://forms.gle/xyz" class="register-btn" target="_blank">Register</a>
+          <p class="event-location">Location: Room 103</p>
+        </div>
+      </div>
 
+      <!-- Event Card 4 -->
+      <div class="event-card tech">
+        <img src="assets/images/event-wiredminds.jpg" alt="Event 4">
+        <div class="event-info">
+          <h3>Wired Minds - Circuit Debugging</h3>
+          <p>Debug and solve the most challenging circuits in this tech-based event.</p>
+          <a href="assets/pdfs/wiredminds.pdf" class="download-btn" target="_blank">Download PDF</a>
+          <a href="https://forms.gle/xyz" class="register-btn" target="_blank">Register</a>
+          <p class="event-location">Location: Room 104</p>
+        </div>
+      </div>
+
+      <!-- Event Card 5 -->
+      <div class="event-card tech">
+        <img src="assets/images/event-bioscope.jpg" alt="Event 5">
+        <div class="event-info">
+          <h3>Bioscope</h3>
+          <p>Unveil the mystery with your sharp eye in the Bioscope event.</p>
+          <a href="assets/pdfs/bioscope.pdf" class="download-btn" target="_blank">Download PDF</a>
+          <a href="https://forms.gle/xyz" class="register-btn" target="_blank">Register</a>
+          <p class="event-location">Location: Room 105</p>
+        </div>
+      </div>
+
+      <!-- NON - TECH -->
+      <!-- Event Card 6 -->
+      <div class="event-card non-tech">
+        <img src="assets/images/event-chatmusic.jpg" alt="Event 6">
+        <div class="event-info">
+          <h3>Chat Music</h3>
+          <p>Start the music and vibe in the electrifying EchoEnd event.</p>
+          <a href="assets/pdfs/chatmusic.pdf" class="download-btn" target="_blank">Download PDF</a>
+          <a href="https://forms.gle/xyz" class="register-btn" target="_blank">Register</a>
+          <p class="event-location">Location: Room 201</p>
+        </div>
+      </div>
+
+      <!-- Event Card 7 -->
+      <div class="event-card non-tech">
+        <img src="assets/images/event-twistntalk.jpg" alt="Event 7">
+        <div class="event-info">
+          <h3>Twist-n-Talk - Tongue Twisters</h3>
+          <p>Twist your tongue with tricky tongue twisters in this fun event.</p>
+          <a href="assets/pdfs/twistntalk.pdf" class="download-btn" target="_blank">Download PDF</a>
+          <a href="https://forms.gle/xyz" class="register-btn" target="_blank">Register</a>
+          <p class="event-location">Location: Room 202</p>
+        </div>
+      </div>
+
+      <!-- Event Card 8 -->
+      <div class="event-card non-tech">
+        <img src="assets/images/event-framefocus.jpg" alt="Event 8">
+        <div class="event-info">
+          <h3>Frame Focus - Snap Map</h3>
+          <p>Snap creative frames in this event that captures the best moments.</p>
+          <a href="assets/pdfs/framefocus.pdf" class="download-btn" target="_blank">Download PDF</a>
+          <a href="https://forms.gle/xyz" class="register-btn" target="_blank">Register</a>
+          <p class="event-location">Location: Room 203</p>
+        </div>
+      </div>
+
+      <!-- Event Card 9 -->
+      <div class="event-card non-tech">
+        <img src="assets/images/event-mindmaze.jpg" alt="Event 9">
+        <div class="event-info">
+          <h3>Mind Maze - Product Advertisement</h3>
+          <p>Create an advertisement for a product in this unique event.</p>
+          <a href="assets/pdfs/mindmaze.pdf" class="download-btn" target="_blank">Download PDF</a>
+          <a href="https://forms.gle/xyz" class="register-btn" target="_blank">Register</a>
+          <p class="event-location">Location: Room 204</p>
+        </div>
+      </div>
+
+      <!-- Event Card 10 -->
+      <div class="event-card non-tech">
+        <img src="assets/images/event-actitout.jpg" alt="Event 10">
+        <div class="event-info">
+          <h3>Act It Out - Guess It</h3>
+          <p>Guess the name of a person in different group, a fun event for all.</p>
+          <a href="assets/pdfs/actitout.pdf" class="download-btn" target="_blank">Download PDF</a>
+          <a href="https://forms.gle/xyz" class="register-btn" target="_blank">Register</a>
+          <p class="event-location">Location: Room 205</p>
+        </div>
+      </div>
+>>>>>>> b81238cc2f94d003e6fc3f27564a131f4515cc2e
     </div>
   </section>
 

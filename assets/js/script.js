@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <span>${hrs}</span> h
         <span>${mins}</span> m 
         <span>${sec}</span> s
-      `;
+      S;
     }, 1000);
   }
 
