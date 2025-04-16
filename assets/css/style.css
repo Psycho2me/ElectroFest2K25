@@ -1,86 +1,181 @@
-/* Reset and Basics */
+/* Reset and Base Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  color: #212529;
   line-height: 1.6;
-  background-color: #f0f4ff;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Header */
-header {
-  background: #004aad;
+/* Dark Mode Styles */
+body.dark-theme {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #007bff;
   color: #fff;
-  padding: 1rem 0;
-  text-align: center;
-  position: relative;
+  border: none;
+  padding: 0.6em 1.2em;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+.theme-toggle-btn:hover {
+  background: #0056b3;
 }
 
-nav {
+/* Header Styles */
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  background: #343a40;
+  color: white;
+  padding: 1em 2em;
 }
 
-nav .logo img {
-  height: 50px;
+header img {
+  width: 50px;
 }
 
-.nav-links {
+nav ul {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
 }
 
-.nav-links a {
+nav ul li {
+  margin-left: 1.5em;
+}
+
+nav ul li a {
   color: white;
   text-decoration: none;
-  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
-.nav-links a:hover {
-  text-decoration: underline;
+nav ul li a:hover {
+  color: #17a2b8;
 }
 
+/* Hero Section */
 .hero-text {
-  margin-top: 20px;
+  text-align: center;
+  padding: 4em 1em 2em;
+  background: linear-gradient(120deg, #007bff, #6610f2);
+  color: white;
 }
 
 .hero-text h1 {
-  font-size: 2.5rem;
+  font-size: 2.5em;
+  margin-bottom: 0.4em;
 }
 
-/* Events Section */
-#events {
-  padding: 40px 20px;
-  background: #eaf0ff;
+.hero-text p {
+  font-size: 1.1em;
+}
+
+/* Countdown Timer */
+.countdown {
+  margin-top: 2em;
   text-align: center;
 }
 
+#timer {
+  display: inline-block;
+  font-size: 1.5em;
+  background: rgba(0,0,0,0.2);
+  padding: 0.6em 1.5em;
+  border-radius: 8px;
+}
+
+#timer span {
+  margin: 0 8px;
+  font-weight: bold;
+}
+
+/* General Instructions */
+#general-instructions {
+  padding: 2em;
+  background: #e9ecef;
+}
+
+#general-instructions h2 {
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+#general-instructions ul {
+  list-style-type: square;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#general-instructions li {
+  margin: 0.5em 0;
+}
+
+/* Event Section */
+#events {
+  padding: 2em;
+  background: #f1f3f5;
+}
+
 #events h2 {
-  margin-bottom: 20px;
-  font-size: 2rem;
-  color: #002766;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.event-tabs {
+  text-align: center;
+  margin-bottom: 1.5em;
+}
+
+.event-tab {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 0.6em 1em;
+  margin: 0 0.5em;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.event-tab:hover, .event-tab.active {
+  background: #0056b3;
 }
 
 .event-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+  gap: 1.5em;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .event-card {
   background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
   overflow: hidden;
-  transition: transform 0.3s;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
 }
 
 .event-card:hover {
@@ -89,295 +184,144 @@ nav .logo img {
 
 .event-card img {
   width: 100%;
-  height: 200px;
+  height: 180px;
   object-fit: cover;
 }
 
 .event-info {
-  padding: 15px;
+  padding: 1em;
 }
 
 .event-info h3 {
-  margin: 0.5rem 0;
-  color: #004aad;
+  margin-bottom: 0.4em;
+  font-size: 1.3em;
 }
 
 .event-info p {
-  margin: 0.5rem 0;
+  margin: 0.3em 0;
+}
+
+.event-location {
+  font-weight: bold;
+  margin-top: 0.5em;
 }
 
 .download-btn, .register-btn {
   display: inline-block;
-  margin: 8px 5px;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 5px;
-  text-decoration: none;
-  color: white;
-  background: #004aad;
-  transition: background 0.3s;
-}
-
-.download-btn:hover, .register-btn:hover {
-  background: #002766;
-}
-
-.event-location {
-  font-size: 0.9rem;
-  color: #555;
-  margin-top: 10px;
-}
-
-/* About Section */
-#about {
-  background: #cbd8ff;
-  padding: 40px 20px;
-  text-align: center;
-}
-
-#about h2 {
-  margin-bottom: 15px;
-  font-size: 2rem;
-}
-
-#about p {
-  max-width: 800px;
-  margin: auto;
-  line-height: 1.8;
-}
-
-/* Footer */
-footer {
-  background: #004aad;
-  color: white;
-  padding: 20px;
-  text-align: center;
-}
-
-footer .social-media a {
-  margin: 0 10px;
-  color: white;
-  text-decoration: none;
-}
-
-footer .social-media a:hover {
-  text-decoration: underline;
-}
-
-/* Theme Toggle */
-.dark-theme {
-  background-color: #121212;
-  color: #e4e4e4;
-}
-
-.dark-theme header,
-.dark-theme footer {
-  background-color: #1a1a1a;
-}
-
-.dark-theme .event-card {
-  background: #1e1e1e;
-  color: #e4e4e4;
-}
-
-.dark-theme .download-btn, .dark-theme .register-btn {
-  background: #006eff;
-}
-
-/* Back to Top */
-#back-to-top {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background: #004aad;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-  transition: background 0.3s;
-}
-
-#back-to-top:hover {
-  background: #002766;
-}
-
-/* Countdown Timer fixed position */
-#countdown {
-  position: fixed;
-  top: 10px;
-  right: 20px;
-  background: #004aad;
-  color: white;
-  padding: 8px 14px;
-  border-radius: 20px;
-  font-weight: bold;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-}
-
-/* Loading Overlay */
-#loading-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #004aad;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-  color: white;
-  font-size: 1.5rem;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  nav .nav-links {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .event-card img {
-    height: 150px;
-  }
-
-  #countdown {
-    font-size: 0.9rem;
-    padding: 6px 10px;
-  }
-}
-
-.event-card.tech {
-  border-left: 5px solid #0077cc;
-  background: rgba(0, 119, 204, 0.05);
-}
-
-.event-card.non-tech {
-  border-left: 5px solid #e67e22;
-  background: rgba(230, 126, 34, 0.05);
-}
-
-.event-card h3::before {
-  content: attr(data-category);
-  display: inline-block;
-  background: #333;
-  color: white;
-  font-size: 0.7em;
-  padding: 2px 8px;
-  margin-right: 8px;
+  margin: 0.3em 0.4em 0.3em 0;
+  padding: 0.4em 1em;
   border-radius: 4px;
+  text-decoration: none;
+  color: white;
+  background: #28a745;
+  transition: background 0.3s ease;
 }
 
-.event-card.tech h3::before {
-  content: "TECH";
-  background: #0077cc;
+.download-btn:hover {
+  background: #218838;
 }
 
-.event-card.non-tech h3::before {
-  content: "NON-TECH";
-  background: #e67e22;
+.register-btn {
+  background: #17a2b8;
 }
 
-.contact-section {
-  text-align: center;
-  background-color: var(--section-bg, #eef6ff);
-  padding: 40px 20px;
-  margin-top: 40px;
-  border-radius: 10px;
+.register-btn:hover {
+  background: #117a8b;
 }
 
-.contact-section h2 {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-  color: var(--primary-color, #0077cc);
+.event-instructions h4 {
+  margin-top: 0.8em;
 }
 
-.contact-list {
-  list-style: none;  /* removes bullets by default */
-  padding: 0;
-  margin: 0;
+.event-instructions ul {
+  padding-left: 1.2em;
 }
 
-.contact-list li {
-  margin: 5px 0;
-  font-size: 16px;
-}
-
-/* Optional: smaller or different style for phone screens */
-@media (max-width: 768px) {
-  .contact-list {
-    list-style: none;  /* Ensure bullets are gone */
-    padding: 0;
-  }
-
-  .contact-list li {
-    font-size: 14px;
-    margin: 8px 0;
-  }
-}
-
+/* Contact Section */
 #contact {
-  padding: 40px 20px;
-  text-align: center;
-  background: var(--background-color, #f2f2f2);
+  background: #e9ecef;
+  padding: 2em;
 }
 
 #contact h2 {
-  font-size: 2rem;
-  margin-bottom: 15px;
-}
-
-#contact p {
-  font-size: 1rem;
-  margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 1em;
 }
 
 .contact-list {
   list-style: none;
-  padding: 0;
-  margin: 0 auto 30px auto;
-  max-width: 400px;
-  text-align: left;
+  text-align: center;
+  margin-bottom: 1em;
 }
 
 .contact-list li {
-  font-size: 1rem;
-  margin: 8px 0;
-}
-
-/* Mobile friendly: Make sure list remains clean on small devices */
-@media (max-width: 768px) {
-  .contact-list {
-    list-style: none;
-    padding: 0;
-    margin: 0 auto 20px auto;
-  }
-
-  .contact-list li {
-    font-size: 0.95rem;
-    margin: 10px 0;
-  }
+  margin: 0.3em 0;
 }
 
 .map-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-  margin: 20px 0;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 .map-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  border: 0;
+  height: 300px;
+  border: none;
 }
 
+/* About Section */
+#about {
+  padding: 2em;
+  text-align: center;
+}
+
+#about p {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Footer */
+footer {
+  background: #343a40;
+  color: white;
+  text-align: center;
+  padding: 1em;
+}
+
+footer .social-media a {
+  color: white;
+  margin: 0 0.6em;
+  text-decoration: none;
+}
+
+footer .social-media a:hover {
+  color: #17a2b8;
+}
+
+/* Dark Theme Adjustments */
+body.dark-theme header,
+body.dark-theme footer {
+  background: #1f1f1f;
+}
+
+body.dark-theme .event-card {
+  background: #262626;
+}
+
+body.dark-theme .event-card p,
+body.dark-theme .event-card h3,
+body.dark-theme .event-instructions li {
+  color: #e0e0e0;
+}
+
+body.dark-theme .event-tabs button {
+  background: #333;
+}
+
+body.dark-theme .event-tabs button:hover,
+body.dark-theme .event-tabs button.active {
+  background: #555;
+}

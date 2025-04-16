@@ -1,77 +1,77 @@
-// ElectroFest2K25 JavaScript
+document.addEventListener('DOMContentLoaded', function () {
 
-document.addEventListener("DOMContentLoaded", () => {
-  // Theme Toggle
-  const themeToggleBtn = document.getElementById("theme-toggle");
-  const body = document.body;
-  const savedTheme = localStorage.getItem("theme");
+  // =========================
+  // Theme Toggle Logic
+  // =========================
+  const themeToggleBtn = document.querySelector('.theme-toggle-btn');
 
-  if (savedTheme) {
-    body.classList.add(savedTheme);
+  // Apply saved theme on load
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-theme');
   }
 
-  if (themeToggleBtn) {
-    themeToggleBtn.addEventListener("click", () => {
-      body.classList.toggle("dark-theme");
-      const newTheme = body.classList.contains("dark-theme") ? "dark-theme" : "light-theme";
-      localStorage.setItem("theme", newTheme);
-    });
+  // Toggle and save theme
+  themeToggleBtn.addEventListener('click', function () {
+    document.body.classList.toggle('dark-theme');
+    if (document.body.classList.contains('dark-theme')) {
+      localStorage.setItem('theme', 'dark');
+    } else {
+      localStorage.setItem('theme', 'light');
+    }
+  });
+
+  // =========================
+  // Countdown Timer Logic
+  // =========================
+  const targetDate = new Date("2025-05-01T09:00:00").getTime();  // <-- set your event start date/time here!
+  const timerElement = document.getElementById('timer');
+
+  if (timerElement) {
+    const interval = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance < 0) {
+        clearInterval(interval);
+        timerElement.innerHTML = "🎉 The Event Has Started!";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      timerElement.innerHTML = `
+        <span>${days}</span> Days 
+        <span>${hours}</span> Hours 
+        <span>${minutes}</span> Minutes 
+        <span>${seconds}</span> Seconds
+      `;
+    }, 1000);
   }
 
-  // Event Filter Tabs
-  const eventTabs = document.querySelectorAll(".event-tab");
-  const eventCards = document.querySelectorAll(".event-card");
+  // =========================
+  // Event Category Filter Logic
+  // =========================
+  const tabs = document.querySelectorAll('.event-tab');
+  const cards = document.querySelectorAll('.event-card');
 
-  eventTabs.forEach(tab => {
-    tab.addEventListener("click", () => {
-      const category = tab.dataset.category;
+  tabs.forEach(tab => {
+    tab.addEventListener('click', function () {
+      tabs.forEach(t => t.classList.remove('active'));
+      this.classList.add('active');
 
-      eventCards.forEach(card => {
-        card.style.display = category === "all" || card.classList.contains(category)
-          ? "block"
-          : "none";
+      const category = this.getAttribute('data-category');
+
+      cards.forEach(card => {
+        if (category === 'all') {
+          card.style.display = 'block';
+        } else {
+          card.style.display = card.classList.contains(category) ? 'block' : 'none';
+        }
       });
-
-      eventTabs.forEach(t => t.classList.remove("active"));
-      tab.classList.add("active");
     });
   });
 
-  // Countdown Timer
-  const countdownDate = new Date("April 26, 2025 21:00:00").getTime();
-  const countdownElement = document.getElementById("countdown");
-
-  function updateCountdown() {
-    const now = new Date().getTime();
-    const timeLeft = countdownDate - now;
-
-    if (timeLeft <= 0) {
-      countdownElement.innerHTML = "Event has started!";
-      clearInterval(countdownInterval);
-    } else {
-      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-      countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-    }
-  }
-
-  const countdownInterval = setInterval(updateCountdown, 1000);
-
-  // Back to Top
-  const backToTopBtn = document.getElementById("back-to-top");
-  if (backToTopBtn) {
-    backToTopBtn.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-  }
-
-  // Loading Overlay
-  const loadingOverlay = document.getElementById("loading-overlay");
-  if (loadingOverlay) {
-    setTimeout(() => {
-      loadingOverlay.style.display = "none";
-    }, 1500);
-  }
 });
