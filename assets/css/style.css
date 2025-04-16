@@ -111,15 +111,20 @@ nav ul li a:hover {
   font-size: 1.1em;
 }
 
-/* Countdown Timer */
+/* Countdown Timer Default Style */
 .countdown {
-  margin-top: 2em;
   text-align: center;
+  margin: 20px 0;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
 }
 
 #timer {
   display: inline-block;
-  font-size: 1.5em;
+  font-size: 2em;
+  font-weight: bold;
+  letter-spacing: 2px;
   background: rgba(0,0,0,0.2);
   padding: 0.6em 1.5em;
   border-radius: 8px;
@@ -128,6 +133,16 @@ nav ul li a:hover {
 #timer span {
   margin: 0 8px;
   font-weight: bold;
+}
+
+/* Mobile Responsive Fix */
+@media (max-width: 600px) {
+  #timer {
+    font-size: 1.2rem;
+  }
+  .countdown {
+    padding: 8px;
+  }
 }
 
 /* General Instructions */
